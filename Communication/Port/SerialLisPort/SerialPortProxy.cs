@@ -1,12 +1,13 @@
-﻿using System;
+﻿using e77.MeasureBase.Communication;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
-using e77.MeasureBase.Extensions.Hex;
+using TestToolsBase.Helper;
 
-namespace e77.MeasureBase.Communication
+namespace TesterToolsBase.Communication
 {
     public class SerialPortProxy : IPortProxy<SerialPort>, IDisposable
     {

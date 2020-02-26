@@ -30,12 +30,27 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kuka.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Azure.Common.NetFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -114,7 +129,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.3\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -173,6 +188,9 @@
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Workflow.Activities" />
     <Reference Include="System.Workflow.ComponentModel" />
@@ -193,12 +211,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlankResult.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BlankResult.Designer.cs" />
-    <Compile Include="BlankTest.cs" />
-    <Compile Include="CheckedValue.cs" />
     <Compile Include="Communication\Device\Device.cs" />
     <Compile Include="Communication\Device\DeviceCollection.cs" />
     <Compile Include="Communication\Port\DynamicPortCollection.cs" />
@@ -212,7 +224,6 @@
     <Compile Include="Communication\Port\SerialLisPort\SerialLisPort.cs" />
     <Compile Include="Communication\Port\SerialLisPort\SerialPortConfiguration.cs" />
     <Compile Include="Communication\Port\SerialLisPort\SerialPortProxy.cs" />
-    <Compile Include="Communication\Port\SerialPortProxy.cs" />
     <Compile Include="Communication\Port\TCPLisPort\Base\TcpLisPortBase.cs" />
     <Compile Include="Communication\Port\TCPLisPort\Base\TcpSocketLisPort.cs" />
     <Compile Include="Communication\Port\TCPLisPort\TcpClientLisPort.cs" />
@@ -251,11 +262,6 @@
     <Compile Include="Console\ConsoleHelper.cs" />
     <Compile Include="Console\ConsoleMenu.cs" />
     <Compile Include="Console\ConsoleMenuItem.cs" />
-    <Compile Include="Conversattion.cs" />
-    <Compile Include="CounterPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CounterPanel.Designer.cs" />
     <Compile Include="Data\CheckedValue.cs" />
     <Compile Include="Data\File\XMLDeserializer.cs" />
     <Compile Include="Data\FlashBuffer.cs" />
@@ -333,7 +339,6 @@
     <Compile Include="Modell\SQL\SqlTableDescriptorHierarchy.cs" />
     <Compile Include="Modell\SQL\SqlTableStaticDescriptorAdditionalRoot.cs" />
     <Compile Include="Modell\SQL\SqTableDescriptorAdditionalHierarchy.cs" />
-    <Compile Include="MultiValueDictionary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -350,6 +355,13 @@
     </Compile>
     <Compile Include="Reports\DateTimeIntarvalForm.Designer.cs" />
     <Compile Include="Reports\DateTimeInterval.cs" />
+    <Compile Include="ResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultForm.Designer.cs">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultModell.cs" />
     <Compile Include="SQL\EnvironmentId.cs" />
     <Compile Include="SQL\EnvironmentTables.cs" />
     <Compile Include="SQL\MappingTable.cs" />
@@ -378,7 +390,6 @@
     <EmbeddedResource Include="Configuration\ProductSelectorWindow.resx">
       <DependentUpon>ProductSelectorWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CounterPanel.resx" />
     <EmbeddedResource Include="Environment\InfoForm.resx">
       <DependentUpon>InfoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -739,6 +750,8 @@
     <Content Include="dll_NpgSQL\Npgsql.pdb" />
     <Content Include="dll_NpgSQL\Npgsql.xml" />
     <Content Include="dll_NpgSQL\policy.2.0.Npgsql.dll" />
+    <Content Include="kuka.ico" />
+    <Content Include="License.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -750,9 +763,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="GUI\ProgressWindows\ProgressWindow.xaml">
       <SubType>Designer</SubType>

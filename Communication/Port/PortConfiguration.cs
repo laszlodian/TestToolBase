@@ -6,7 +6,7 @@ using System.IO.Ports;
 using System.IO;
 using System.ComponentModel;
 
-namespace e77.MeasureBase
+namespace TesterToolsBase.Communication.Port
 {
     public class PortConfiguration
     {

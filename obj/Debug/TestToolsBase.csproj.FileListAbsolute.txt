@@ -1,15 +1,3 @@
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.csprojAssemblyReference.cache
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.CounterPanel.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.MeasureEnvironment.InfoForm.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.GUI.LoadMeasureSelectorForm.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.GUI.ProgressWindows.AkyProgressBar.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.GUI.SerialPortSelectionForm.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.GUI.TestDbControl.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.GUI.WorkplaceSelectionForm.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.GUI.WorkplaceSetupForm.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.Properties.Resources.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.Reports.DateTimeIntarvalForm.resources
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.csproj.GenerateResource.cache
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\Interop.Accessibility.dll
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\Interop.AccessibilityCplAdminLib.dll
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\Interop.APClientHelpPane.dll
@@ -47,7 +35,7 @@ C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\Interop.UIAutomationBlocking
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\Interop.UIAutomationClient.dll
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\Interop.UIAutomationCrossBitnessHookLib.dll
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.csproj.ResolveComReference.cache
-C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\e77.MeasureBase.ProductSelectorWindow.resources
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\GUI\ProgressWindows\ProgressWindow.g.cs
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase_MarkupCompile.cache
 C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase_MarkupCompile.lref
+C:\Users\laszl\source\repos\TestToolsBase\obj\Debug\TestToolsBase.csprojAssemblyReference.cache

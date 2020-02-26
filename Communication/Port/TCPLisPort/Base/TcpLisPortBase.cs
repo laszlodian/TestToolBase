@@ -10,6 +10,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Timers;
 using GalaSoft.MvvmLight;
+using TesterToolsBase.Communication;
 
 namespace e77.MeasureBase.Communication
 {

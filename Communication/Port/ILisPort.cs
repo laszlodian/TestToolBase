@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace e77.MeasureBase.Communication
+namespace TesterToolsBase.Communication
 {
     public interface ILisPort : IPortProxy, INotifyPropertyChanged
     {

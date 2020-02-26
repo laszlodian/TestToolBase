@@ -6,7 +6,7 @@ using System.IO.Ports;
 using System.IO;
 using System.ComponentModel;
 
-namespace e77.MeasureBase.Communication
+namespace TesterToolsBase.Communication
 {
     public class SerialPortConfiguration
     {

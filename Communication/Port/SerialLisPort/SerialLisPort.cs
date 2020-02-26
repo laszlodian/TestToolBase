@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
-
+using TesterToolsBase.Communication;
 
 namespace e77.MeasureBase.Communication
 {

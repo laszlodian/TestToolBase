@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using e77.MeasureBase.e77Console;
-using System.IO.Ports;
 
-namespace e77.MeasureBase.Communication.Port
+using System.IO.Ports;
+using TestToolsBase.Console;
+
+namespace TesterToolsBase.Communication.Port
 {
     public static class UsbAutoDetect
     {
