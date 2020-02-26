@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C126C04E-AD78-476F-B2C2-272C7CE9D532}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestToolsBase</RootNamespace>
+    <AssemblyName>TestToolsBase</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Azure.Common.NetFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Azure.Management.Sql, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Azure.ResourceManager, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Entity.Design.Extensibility, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Tools.Com.Interop, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Tools.Components, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Tools.Design.Core, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ExtendedReflection, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.MSXML, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionDlg.UI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Data.Tools.ExceptionMessageBox, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ExpressionTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.FileSystemTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ManagedConnections, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SQLTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=AMD64" />
+    <Reference Include="Microsoft.SqlServer.XMLSrc, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.stdformat, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.CodingConventions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Core, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Framework, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Services, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Tools.DataCompare, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Tools.Delta, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Tools.Delta.UI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Tools.Interfaces.1.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Data.Tools.Package, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Tools.Package.SqlProfile, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Tools.SqlObjectExplorer, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Debugger.Interop.16.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Debugger.Parallel.MultiValueVisualizers, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.DesignTools.Extensibility, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.VisualStudio.DesignTools.Interaction, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.VisualStudio.GraphModel, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.LanguageServer.Client, Version=16.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Design, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Framework, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.14.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TaskRunnerExplorer.14.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.15.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Modeling.15.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.VSHelp, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.3\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_Npgsql\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="Npgsql, Version=2.0.12.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_Npgsql\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.2.0.Npgsql, Version=0.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_Npgsql\policy.2.0.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.AddIn" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Dynamic" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.IO.Pipelines, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Resources.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsAzureEventSource, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WpfWindowToolkit, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WpfWindowToolkit.3.0.1\lib\net45\WpfWindowToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlankResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlankResult.Designer.cs" />
+    <Compile Include="BlankTest.cs" />
+    <Compile Include="CheckedValue.cs" />
+    <Compile Include="Communication\Device\Device.cs" />
+    <Compile Include="Communication\Device\DeviceCollection.cs" />
+    <Compile Include="Communication\Port\DynamicPortCollection.cs" />
+    <Compile Include="Communication\Port\Helper.cs" />
+    <Compile Include="Communication\Port\ILisPort.cs" />
+    <Compile Include="Communication\Port\IPortProxy.cs" />
+    <Compile Include="Communication\Port\PortCollection.cs" />
+    <Compile Include="Communication\Port\PortCollection\DynamicPortCollection.cs" />
+    <Compile Include="Communication\Port\PortCollection\PortCollection.cs" />
+    <Compile Include="Communication\Port\PortConfiguration.cs" />
+    <Compile Include="Communication\Port\SerialLisPort\SerialLisPort.cs" />
+    <Compile Include="Communication\Port\SerialLisPort\SerialPortConfiguration.cs" />
+    <Compile Include="Communication\Port\SerialLisPort\SerialPortProxy.cs" />
+    <Compile Include="Communication\Port\SerialPortProxy.cs" />
+    <Compile Include="Communication\Port\TCPLisPort\Base\TcpLisPortBase.cs" />
+    <Compile Include="Communication\Port\TCPLisPort\Base\TcpSocketLisPort.cs" />
+    <Compile Include="Communication\Port\TCPLisPort\TcpClientLisPort.cs" />
+    <Compile Include="Communication\Port\TCPLisPort\TcpIpEndPointLisPort.cs" />
+    <Compile Include="Communication\Port\TCPLisPort\TcpListenerLisPort.cs" />
+    <Compile Include="Communication\Port\UsbAutoDetect.cs" />
+    <Compile Include="Communication\Protocol\Base\DataProtocolComposite.cs" />
+    <Compile Include="Communication\Protocol\Base\HeaderedDataProtocol.cs" />
+    <Compile Include="Communication\Protocol\Base\ProtocolComposite.cs" />
+    <Compile Include="Communication\Protocol\Base\ProtocolElement.cs" />
+    <Compile Include="Communication\Protocol\ChecksumAlgorithms.cs" />
+    <Compile Include="Communication\Protocol\CommunicationExceptions.cs" />
+    <Compile Include="Communication\Protocol\DifferentSendReceiveProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\Checksum.cs" />
+    <Compile Include="Communication\Protocol\Element\CustomLengthDataProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\DataProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\EchoProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\EndSignDataProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\PatternMatchDataProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\ProcessDataProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\ProcessProtocol.cs" />
+    <Compile Include="Communication\Protocol\Element\SyncHeader.cs" />
+    <Compile Include="Communication\Protocol\Interfaces\IDataProtocol.cs" />
+    <Compile Include="Communication\Protocol\Interfaces\IProtocol.cs" />
+    <Compile Include="Communication\Protocol\Interfaces\IProtocolComposite.cs" />
+    <Compile Include="Communication\Protocol\Interfaces\IProtocolElement.cs" />
+    <Compile Include="Communication\Protocol\LegacyProtocol.cs" />
+    <Compile Include="Communication\Protocol\ProtocolArbitraryDataLength.cs" />
+    <Compile Include="Communication\Protocol\SendedLengthDataProtocol.cs" />
+    <Compile Include="Configuration\IniFile.cs" />
+    <Compile Include="Configuration\MeasureConfig.cs" />
+    <Compile Include="Configuration\ProductSelectorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Console\ConsoleApplication.cs" />
+    <Compile Include="Console\ConsoleHelper.cs" />
+    <Compile Include="Console\ConsoleMenu.cs" />
+    <Compile Include="Console\ConsoleMenuItem.cs" />
+    <Compile Include="Conversattion.cs" />
+    <Compile Include="CounterPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CounterPanel.Designer.cs" />
+    <Compile Include="Data\CheckedValue.cs" />
+    <Compile Include="Data\File\XMLDeserializer.cs" />
+    <Compile Include="Data\FlashBuffer.cs" />
+    <Compile Include="Data\MultiValueDictionary.cs" />
+    <Compile Include="Environment\e77User.cs" />
+    <Compile Include="Environment\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Environment\InfoForm.designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Environment\IpThermo.cs" />
+    <Compile Include="Environment\Rooms.cs" />
+    <Compile Include="ErrorHandling\ExceptionHelper.cs" />
+    <Compile Include="ErrorHandling\Exceptions.cs" />
+    <Compile Include="ErrorHandling\TraceHelper.cs" />
+    <Compile Include="File\XMLDeserializer.cs" />
+    <Compile Include="GuiHelper.cs" />
+    <Compile Include="GUI\ClosableControls.cs" />
+    <Compile Include="GUI\GuiErrorHandling.cs" />
+    <Compile Include="GUI\LoadMeasureSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoadMeasureSelectorForm.Designer.cs" />
+    <Compile Include="GUI\MouseClickHacker.cs" />
+    <Compile Include="GUI\ProgressWindows\AkyProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ProgressWindows\AkyProgressBar.Designer.cs" />
+    <Compile Include="GUI\ProgressWindows\ProgressWindow.xaml.cs" />
+    <Compile Include="GUI\SerialPortSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SerialPortSelectionForm.Designer.cs" />
+    <Compile Include="GUI\SimpleDialogs.cs" />
+    <Compile Include="GUI\TestDbControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\TestDbControl.Designer.cs" />
+    <Compile Include="GUI\WorkplaceSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\WorkplaceSelectionForm.Designer.cs" />
+    <Compile Include="GUI\WorkplaceSetupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\WorkplaceSetupForm.Designer.cs" />
+    <Compile Include="Helper\Conversattion.cs" />
+    <Compile Include="Helper\EnumHelper.cs" />
+    <Compile Include="Helper\ExtensionMethodsByteList.cs" />
+    <Compile Include="Helper\ExtensionMethodsFloat.cs" />
+    <Compile Include="Helper\ExtensionMethodsHex.cs" />
+    <Compile Include="Helper\ExtensionMethodsNullableBool.cs" />
+    <Compile Include="Helper\ExtensionMethodsNumericGeneric.cs" />
+    <Compile Include="Helper\ExtensionMethodsString.cs" />
+    <Compile Include="Helper\ExtensionMethodsUInt16.cs" />
+    <Compile Include="Helper\GuiHelper.cs" />
+    <Compile Include="Helper\HierarchyDatabaseHelper.cs" />
+    <Compile Include="Helper\MeasureHelper.cs" />
+    <Compile Include="HierarchyDatabaseHelper.cs" />
+    <Compile Include="InputWrapper\InputWrapperBase.cs" />
+    <Compile Include="InputWrapper\InputWrapperFile.cs" />
+    <Compile Include="InputWrapper\InputWrapperMemory.cs" />
+    <Compile Include="InputWrapper\InputWrapperPort.cs" />
+    <Compile Include="Modell\Data\MeasureBaseClass.cs" />
+    <Compile Include="Modell\Data\MeasureCollectionBase.cs" />
+    <Compile Include="Modell\Data\MeasureRoot.cs" />
+    <Compile Include="Modell\Defines.cs" />
+    <Compile Include="Modell\SnAndMAC\MacAddress.cs" />
+    <Compile Include="Modell\SnAndMAC\SqlRecordSn.cs" />
+    <Compile Include="Modell\SQL\SqlHiLevel.cs" />
+    <Compile Include="Modell\SQL\SqlHiLevelInterfaces.cs" />
+    <Compile Include="Modell\SQL\SqlRowDescriptorAdditionalHierarchy.cs" />
+    <Compile Include="Modell\SQL\SqlRowDescriptorHierarchy.cs" />
+    <Compile Include="Modell\SQL\SqlTableDescriptorHierarchy.cs" />
+    <Compile Include="Modell\SQL\SqlTableStaticDescriptorAdditionalRoot.cs" />
+    <Compile Include="Modell\SQL\SqTableDescriptorAdditionalHierarchy.cs" />
+    <Compile Include="MultiValueDictionary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DateTimeIntarvalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DateTimeIntarvalForm.Designer.cs" />
+    <Compile Include="Reports\DateTimeInterval.cs" />
+    <Compile Include="SQL\EnvironmentId.cs" />
+    <Compile Include="SQL\EnvironmentTables.cs" />
+    <Compile Include="SQL\MappingTable.cs" />
+    <Compile Include="SQL\Operations.cs" />
+    <Compile Include="SQL\SnTable.cs" />
+    <Compile Include="SQL\SqlDescriptorEnvironmentId.cs" />
+    <Compile Include="SQL\SqlEnvironmentInfo.cs" />
+    <Compile Include="SQL\SqlInterfaces.cs" />
+    <Compile Include="SQL\SqlLog.cs" />
+    <Compile Include="SQL\SqlLowLevel.cs" />
+    <Compile Include="SQL\SqlMiddleLevel.cs" />
+    <Compile Include="SQL\SqlRowDescriptor.cs" />
+    <Compile Include="SQL\SqlRowDescriptorAdditional.cs" />
+    <Compile Include="SQL\SqlTableDescriptorAdditional.cs" />
+    <Compile Include="SQL\SqlTableDescriptorAdditionalNoObj.cs" />
+    <Compile Include="SQL\SqlTableDescriptorAdditionalObj.cs" />
+    <Compile Include="SQL\SqlTableDescriptorBase.cs" />
+    <Compile Include="SQL\SqlTableDescriptorEnvironmentId.cs" />
+    <Compile Include="SQL\SqlTableDescriptorsBase.cs" />
+    <Compile Include="SQL\SwVersion.cs" />
+    <Compile Include="Threading\WindowedBackgroundWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuration\ProductSelectorWindow.resx">
+      <DependentUpon>ProductSelectorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CounterPanel.resx" />
+    <EmbeddedResource Include="Environment\InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LoadMeasureSelectorForm.resx" />
+    <EmbeddedResource Include="GUI\ProgressWindows\AkyProgressBar.resx" />
+    <EmbeddedResource Include="GUI\SerialPortSelectionForm.resx" />
+    <EmbeddedResource Include="GUI\TestDbControl.resx" />
+    <EmbeddedResource Include="GUI\WorkplaceSelectionForm.resx" />
+    <EmbeddedResource Include="GUI\WorkplaceSetupForm.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DateTimeIntarvalForm.resx" />
+    <EmbeddedResource Include="Threading\WindowedBackgroundWorker.resx">
+      <DependentUpon>WindowedBackgroundWorker.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Accessibility">
+      <Guid>{1EA4DBF0-3C3B-11CF-810C-00AA00389B71}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AccessibilityCplAdminLib">
+      <Guid>{714DD4F6-7676-4BDE-925A-C2FEC2073F36}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="APClientHelpPane">
+      <Guid>{8CEC5860-07A1-11D9-B15E-000D56BFE6EE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="atkexComSvc">
+      <Guid>{34AAD71E-0356-470C-94B7-593BE46311BB}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ATLLib">
+      <Guid>{44EC0535-400F-11D0-9DCD-00A0C90391D3}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AutoHelperLib">
+      <Guid>{8404DD0E-7A27-4399-B1D9-6492B7DD7F7F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AZROLESLib">
+      <Guid>{11A8B8EE-BF30-409A-8EF7-3A143EF70332}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CERTCLILib">
+      <Guid>{372FCE32-4324-11D0-8810-00A0C903B83C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CERTENCODELib">
+      <Guid>{13199C00-7494-11D0-8816-00A0C903B83C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CERTENROLLLib">
+      <Guid>{728AB348-217D-11DA-B2A4-000E7BBB2B09}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="COMAdmin">
+      <Guid>{F618C513-DFB8-11D1-A2CF-00805FC79235}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="COMReplLib">
+      <Guid>{98315905-7BE5-11D2-ADC1-00A02463D6E7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="COMSVCSLib">
+      <Guid>{2A005C00-A5DE-11CF-9E66-00AA00A3F464}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CUSTREGLib">
+      <Guid>{640D3148-A423-11D2-B943-00C04F79D22F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DataCollectorTasks">
+      <Guid>{3F63D669-DBA2-45A8-A63D-724404E607C7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DFSSHLEXLib">
+      <Guid>{ECCDF535-45CC-11CE-B9BF-0080C87CDBA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="dtshLib">
+      <Guid>{1FDA955A-61FF-11DA-978C-0008744FAAB7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DTSPipeline">
+      <Guid>{4BC2EDB4-2CF0-486B-8D06-D59768E794FF}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="DtsServer">
+      <Guid>{8B94F01A-30C3-4231-8409-99B0707F09F1}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="EditionUpgradeHelperLib">
+      <Guid>{09C6A793-92DC-4D27-A11D-3921C9314DED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="EditionUpgradeManagerLib">
+      <Guid>{2909004A-90C2-4937-A407-2DF113C6A0CC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="EnhancedStorageAPILib">
+      <Guid>{FF9D683B-B90A-49B4-9649-F93756BAD71F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ExecutePackageTaskLib">
+      <Guid>{D22C4C0D-9A1B-493C-9739-EFF48554D244}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="HelpPane">
+      <Guid>{8CEC5857-07A1-11D9-B15E-000D56BFE6EE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MbaeApiLib">
+      <Guid>{1878A0BC-B9A1-4BD0-B67E-BE35EDE35A96}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MbnApi">
+      <Guid>{DCBBBAB6-0001-4BBB-AAEE-338E368AF6FA}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="mscoree">
+      <Guid>{5477469E-83B1-11D2-8B49-00A0C9B7C9C4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSHelpServices">
+      <Guid>{8CEC5899-07A1-11D9-B15E-000D56BFE6EE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MsRdpSessionManager">
+      <Guid>{9C757116-4367-4DA9-AC0E-6C6577AD5560}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Office2013CustomActionsLib">
+      <Guid>{AB4D3FA3-21B9-443C-886E-FC4A417D3E4D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="PortableDeviceClassExtension">
+      <Guid>{C0FFA723-FF4C-4983-8565-66D78E73036E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SkypeSDK">
+      <Guid>{F1CBBA3D-683A-4612-97EB-AF035E3B6218}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="UIA">
+      <Guid>{930299CE-9965-4DEC-B0F4-A54848D4B667}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="UIAutomationBlockingCoreLib">
+      <Guid>{EA39B853-5769-4937-8ECE-736DE4F469BC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="UIAutomationClient1">
+      <Guid>{944DE083-8FB8-45CF-BCB7-C477ACB2F897}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="UIAutomationCrossBitnessHookLib">
+      <Guid>{8ACC2016-04A3-4343-B8E1-1870E35D6A41}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll_AutoIt\AutoItX3.dll" />
+    <Content Include="dll_NpgSQL\Mono.Security.dll" />
+    <Content Include="dll_NpgSQL\Npgsql.dll" />
+    <Content Include="dll_NpgSQL\Npgsql.pdb" />
+    <Content Include="dll_NpgSQL\Npgsql.xml" />
+    <Content Include="dll_NpgSQL\policy.2.0.Npgsql.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Communication\Protocol\csCommunication.cd" />
+    <None Include="dll_NpgSQL\policy.2.0.Npgsql.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="GUI\ProgressWindows\ProgressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

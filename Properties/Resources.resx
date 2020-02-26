@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCOUNT_MANAGEMENT_ERROR" xml:space="preserve">
+    <value>There is some error with the Windows Account Service - User: {0}</value>
+  </data>
+  <data name="ARG_HELP_DETAILED" xml:space="preserve">
+    <value>Use /detailed argument for detailed logging</value>
+  </data>
+  <data name="ARG_HELP_HELP" xml:space="preserve">
+    <value>This help message can be show by: /? /h /help</value>
+  </data>
+  <data name="ARG_HELP_SQL" xml:space="preserve">
+    <value>Visszatöltéshez használja a /sql:X argumentumot</value>
+  </data>
+  <data name="ARG_HELP_SQL_CONTINUABLE" xml:space="preserve">
+    <value>Use /help:continue</value>
+  </data>
+  <data name="ARG_HELP_TEST_DB" xml:space="preserve">
+    <value>To work with testDB use this argument: /tesztDB</value>
+  </data>
+  <data name="CHECKEDVALUE_ABOVE_LIMIT" xml:space="preserve">
+    <value>The checked value is under the defined limit.</value>
+  </data>
+  <data name="CHECKEDVALUE_BELOW_LIMIT" xml:space="preserve">
+    <value>The checked value is below the limit</value>
+  </data>
+  <data name="CHECKEDVALUE_TOSTRING" xml:space="preserve">
+    <value>Value: {0} HiLimit: {1} LowLimit: {2} Strings: {3}</value>
+  </data>
+  <data name="CHECKEDVALUE_WITHIN_LIMIT" xml:space="preserve">
+    <value>The checked value is in the defined limit</value>
+  </data>
+  <data name="ConsoleApplication_CancelQuestion" xml:space="preserve">
+    <value>Are u sure to cancel?</value>
+  </data>
+  <data name="ConsoleApplication_ProgramEndCanceled" xml:space="preserve">
+    <value>The execution of the programm has cancelled</value>
+  </data>
+  <data name="ConsoleApplication_ProgramEndErrorSummary" xml:space="preserve">
+    <value>The details of the errors during the program execution</value>
+  </data>
+  <data name="ConsoleApplication_ProgramEndFailed" xml:space="preserve">
+    <value>The program execution has failed</value>
+  </data>
+  <data name="ConsoleApplication_ProgramEndOk" xml:space="preserve">
+    <value>The program executed without any error</value>
+  </data>
+  <data name="ConsoleApplication_TracefileSavedInfo" xml:space="preserve">
+    <value>Trace file saved</value>
+  </data>
+  <data name="CONSOLEHELPER_PRESSANYKEY" xml:space="preserve">
+    <value>Please press any key...</value>
+  </data>
+  <data name="DIALOG_RESULT_CANCEL" xml:space="preserve">
+    <value>Cancel operation</value>
+  </data>
+  <data name="DIALOG_RESULT_NO" xml:space="preserve">
+    <value>No answer</value>
+  </data>
+  <data name="DIALOG_RESULT_OK" xml:space="preserve">
+    <value>OK operation</value>
+  </data>
+  <data name="DIALOG_RESULT_RETRY" xml:space="preserve">
+    <value>Retry operation</value>
+  </data>
+  <data name="DIALOG_RESULT_YES" xml:space="preserve">
+    <value>YES answer</value>
+  </data>
+  <data name="ERROR_HAPPENED_PARAM" xml:space="preserve">
+    <value>Error happened: {0}</value>
+  </data>
+  <data name="ERROR_MIN_LENGHT" xml:space="preserve">
+    <value>Minimum length is: {0}</value>
+  </data>
+  <data name="EXCEPTION_SQL_NO_DATA_FOR" xml:space="preserve">
+    <value>No connection to the database since {0}</value>
+  </data>
+  <data name="EXCEPTION_SQL_NO_DATA_FOR_WITHIN_HOURS" xml:space="preserve">
+    <value>No connectionn to the database in the last few hours</value>
+  </data>
+  <data name="EXCEPTION_SQL_NO_ROW_AT_TABLE" xml:space="preserve">
+    <value>Error! No such row at the table</value>
+  </data>
+  <data name="MEASURE_SUCCESSFULL" xml:space="preserve">
+    <value>Result is successfull</value>
+  </data>
+  <data name="MEASURE_UNSUCCESSFULL" xml:space="preserve">
+    <value>Result is not succesfull</value>
+  </data>
+  <data name="MEASURING" xml:space="preserve">
+    <value>Measuring is on progress</value>
+  </data>
+  <data name="NOT_SET" xml:space="preserve">
+    <value>Nincs beállítva!</value>
+  </data>
+  <data name="QUIT" xml:space="preserve">
+    <value>Exit program</value>
+  </data>
+  <data name="SAVE_TRACE" xml:space="preserve">
+    <value>Save Trace file</value>
+  </data>
+  <data name="SEARCHING_VALUES" xml:space="preserve">
+    <value>Keresési értékek</value>
+  </data>
+  <data name="SHOW_MEASURE_INFO" xml:space="preserve">
+    <value>Show Process Details</value>
+  </data>
+</root>
